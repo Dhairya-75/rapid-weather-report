@@ -15,7 +15,7 @@ weatherForm.addEventListener('submit', (e) => {
             console.log(data.error)
         } else {
             
-            dataput.textContent=data.name + " is having " + data.weather[0].description + ", Temperature is : "+data.main.temp + "and Humidity is : "+data.main.humidity
+            dataput.textContent=data.name + " is having " + data.weather[0].description + ", Temperature is "+data.main.temp + " and Humidity is : "+data.main.humidity
             console.log(data.name + " is having " + data.weather[0].description + ", Temperature is : "+data.main.temp + " and Humidity is : "+data.main.humidity)
             
         }
