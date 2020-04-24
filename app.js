@@ -8,15 +8,15 @@ const dataput = document.querySelector('#inputdata')
 weatherForm.addEventListener('submit', (e) => {
     e.preventDefault()
     const location = search.value
-    fetch('https://api.openweathermap.org/data/2.5/weather?q='+ location +'&appid=a58f272460b7e69bc75cb0564f342621').then((response) => {
+    fetch('https://api.openweathermap.org/data/2.5/weather?q='+ location +'&units=metric&appid=a58f272460b7e69bc75cb0564f342621').then((response) => {
     response.json().then((data)=>{
         if (data.error) {
             
             console.log(data.error)
         } else {
-            
-            dataput.textContent=data.name + " is having " + data.weather[0].description + ", Temperature is "+data.main.temp + " and Humidity is : "+data.main.humidity
-            console.log(data.name + " is having " + data.weather[0].description + ", Temperature is "+data.main.temp + " and Humidity is : "+data.main.humidity)
+        
+            dataput.textContent=data.name + " is having " + data.weather[0].description + ", Temperature is  "+data.main.temp + " and Humidity is : "+data.main.humidity
+            console.log(data.name + " is having " + data.weather[0].description + ", Temperature is "+data.main.temp+" °C and Humidity is "+data.main.humidity)
             
         }
     })
@@ -32,9 +32,9 @@ $("#mumbai1").html(data.name + " is having " + data.weather[0].description)
 }) } )
 
  .catch((error)=>{ console.log(error)});
- fetch("https://api.openweathermap.org/data/2.5/weather?q=Mumbai&appid=a58f272460b7e69bc75cb0564f342621")
+ fetch("https://api.openweathermap.org/data/2.5/weather?q=Mumbai&units=metric&appid=a58f272460b7e69bc75cb0564f342621")
  .then((weather) => { weather.json().then(data => {
-$("#mumbai2").html(" Temperature is " + data.main.temp)
+$("#mumbai2").html(" Temperature is " + data.main.temp+"°C")
 }) } )
  .catch((error)=>{ console.log(error)});
 
@@ -50,9 +50,9 @@ $("#newyork1").html(data.name + " is having " + data.weather[0].description)
 }) } )
 
  .catch((error)=>{ console.log(error)});
- fetch("https://api.openweathermap.org/data/2.5/weather?q=new york&appid=a58f272460b7e69bc75cb0564f342621")
+ fetch("https://api.openweathermap.org/data/2.5/weather?q=new york&units=metric&appid=a58f272460b7e69bc75cb0564f342621")
  .then((weather) => { weather.json().then(data => {
-$("#newyork2").html(" Temperature is " + data.main.temp)
+$("#newyork2").html(" Temperature is " + data.main.temp+"°C")
 }) } )
 
  .catch((error)=>{ console.log(error)});
@@ -68,9 +68,9 @@ $("#melbourne1").html(data.name + " is having " + data.weather[0].description)
 }) } )
  .catch((error)=>{ console.log(error)});
 
- fetch("https://api.openweathermap.org/data/2.5/weather?q=melbourne&appid=a58f272460b7e69bc75cb0564f342621")
+ fetch("https://api.openweathermap.org/data/2.5/weather?q=melbourne&units=metric&appid=a58f272460b7e69bc75cb0564f342621")
  .then((weather) => { weather.json().then(data => {
-$("#melbourne2").html(" Temperature is " + data.main.temp)
+$("#melbourne2").html(" Temperature is " + data.main.temp+"°C")
 }) } )
  .catch((error)=>{ console.log(error)});
 
@@ -85,9 +85,9 @@ $("#melbourne3").html(" Humidity is "+ data.main.humidity)
 $("#london1").html(data.name + " is having " + data.weather[0].description)
 }) } )
 
-fetch("https://api.openweathermap.org/data/2.5/weather?q=london&appid=a58f272460b7e69bc75cb0564f342621")
+fetch("https://api.openweathermap.org/data/2.5/weather?q=london&units=metric&appid=a58f272460b7e69bc75cb0564f342621")
 .then((weather) => { weather.json().then(data => {
-$("#london2").html(" Temperature is " +  data.main.temp)
+$("#london2").html(" Temperature is " +  data.main.temp+"°C")
 }) } )
 .catch((error)=>{ console.log(error)});
 
@@ -104,9 +104,9 @@ $("#shanghai1").html(data.name + " is having " + data.weather[0].description)
 }) } )
 .catch((error)=>{ console.log(error)});
 
-fetch("https://api.openweathermap.org/data/2.5/weather?q=shanghai&appid=a58f272460b7e69bc75cb0564f342621")
+fetch("https://api.openweathermap.org/data/2.5/weather?q=shanghai&units=metric&appid=a58f272460b7e69bc75cb0564f342621")
 .then((weather) => { weather.json().then(data => {
-$("#shanghai2").html(" Temperature is "+ ddata.main.temp)
+$("#shanghai2").html(" Temperature is "+ data.main.temp+"°C")
 }) } )
 .catch((error)=>{ console.log(error)});
 
@@ -122,9 +122,9 @@ $("#singapore1").html(data.name + " is having " + data.weather[0].description)
 }) } )
  .catch((error)=>{ console.log(error)});
 
- fetch("https://api.openweathermap.org/data/2.5/weather?q=singapore&appid=a58f272460b7e69bc75cb0564f342621")
+ fetch("https://api.openweathermap.org/data/2.5/weather?q=singapore&units=metric&appid=a58f272460b7e69bc75cb0564f342621")
  .then((weather) => { weather.json().then(data => {
-$("#singapore2").html( " Temperature is " + data.main.temp)
+$("#singapore2").html( " Temperature is " + data.main.temp+"°C")
 }) } )
  .catch((error)=>{ console.log(error)});
 
